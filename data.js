@@ -1,10 +1,7 @@
-module.exports = (x) => {
-  console.log('hi from data.js');
-  return true;
+const boundUpper = (max, n) => {
+  return 4;
 }
-  
-// boundUpper
 
-// boundLower
-
-// boundBetween
+module.exports = {
+  boundUpper
+}
