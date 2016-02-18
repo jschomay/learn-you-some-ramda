@@ -1,7 +1,17 @@
 const boundUpper = (max, n) => {
-  return 4;
+  return n <= max ? n : max;
+}
+
+const boundLower = (min, n) => {
+  return n >= min ? n : min;
+}
+
+const boundBetween = (min, max, n) => {
+  return n >= min ? n : min;
 }
 
 module.exports = {
-  boundUpper
+  boundUpper,
+  boundLower,
+  boundBetween
 }
