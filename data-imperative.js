@@ -26,4 +26,14 @@ export const boundBetween0And10 = (n) => {
   }
 }
 
+export const boundBetweenNegative5And0 = (n) => {
+  if(n > 0) {
+    return 0;
+  } else if(n < -5) {
+    return -5;
+  } else {
+    return n;
+  }
+}
+
 

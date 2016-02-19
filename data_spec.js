@@ -1,6 +1,9 @@
 import {equal} from 'assert'
-import {boundUpper, boundLower, boundBetween, boundBetween0And10} from './data-functional'
-// import {boundUpper, boundLower, boundBetween, boundBetween0And10} from './data-imperative'
+
+import {boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0} from './data-functional'
+
+// import {boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0} from './data-imperative'
+
 
 describe('data tools', () => {
   describe('boundUpper', () => {
@@ -32,6 +35,14 @@ describe('data tools', () => {
       equal(boundBetween0And10(5), 5);
       equal(boundBetween0And10(15), 10);
       equal(boundBetween0And10(-20), 0);
+    });
+  })
+
+  describe('boundBetweenNegative5And0', () => {
+    it('clips numbers between -5 and 0', () => {
+      equal(boundBetweenNegative5And0(-15), -5);
+      equal(boundBetweenNegative5And0(15), 0);
+      equal(boundBetweenNegative5And0(-3), -3);
     });
   })
 })
