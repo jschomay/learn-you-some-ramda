@@ -1,4 +1,6 @@
 let boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0;
+export { boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0 };
+
 
 // "How can I make data-imperative.js more functional?"
 
@@ -87,7 +89,13 @@ boundBetweenNegative5And0 = boundBetweenCurried(-5, 0);
 
 // "That's pretty good, but it's kind of clunky.  Maybe ramda can help make it more practical."
 
+import R from 'ramda';
 
-// "Ramda has auto-curried versions of most common functions, plus they are more flexible, as I can call them one or multiple arguments at a time."
+boundUpper = R.min;
+boundLower = R.max;
+boundBetweenCurried = (min, max) => R.compose(boundLower(min), boundUpper(max));
+boundBetween0And10 = boundBetweenCurried(0, 10);
+boundBetweenNegative5And0 = boundBetweenCurried(-5, 0);
 
-export { boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0 };
+
+// "Yes! Ramda FTW."
