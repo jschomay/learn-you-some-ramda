@@ -1,0 +1,25 @@
+env:
+  browser: true
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  sourceType: module
+rules:
+  no-unused-vars: false
+  indent:
+    - 2
+    - 2
+  linebreak-style:
+    - 2
+    - unix
+  quotes:
+    - 2
+    - single
+  semi:
+    - 2
+    - always
+  max-len:
+    - 0
+    - 120
+    - 200

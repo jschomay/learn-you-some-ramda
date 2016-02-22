@@ -14,10 +14,10 @@ export { boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenN
 // "Hmm, bound upper is like Math.min, I could use that."
 boundUpper = (max, n) => {
   return Math.min(max, n);
-}
+};
 boundLower = (min, n) => {
   return Math.max(min, n);
-}
+};
 
 // "Since the signatures match, I can just assign boundUpper to Math.min."
 boundUpper = Math.min;
@@ -27,13 +27,13 @@ boundLower = Math.max;
 boundBetween = (min, max, n) => {
   let lowerBounded = boundLower(min, n);
   return boundUpper(max, lowerBounded);
-}
+};
 boundBetween0And10 = (n) => {
   return boundBetween(0, 10, n);
-}
+};
 boundBetweenNegative5And0 = (n) => {
   return boundBetween(-5, 0, n);
-}
+};
 
 
 
@@ -47,17 +47,17 @@ boundBetweenNegative5And0 = (n) => {
 // "But that is a little messy and inflexible, maybe I can do better with some currying."
 let boundUpperCurried = (max) => {
   return n => Math.min(max, n);
-}
+};
 let boundLowerCurried = (min) => {
   return n => Math.max(min, n);
-}
+};
 let boundBetweenCurried = (min, max) => {
   let lowerBoundAtMin = boundLowerCurried(min);
   let upperBoundAtMax = boundUpperCurried(max);
   return (n) => {
     return (lowerBoundAtMin(upperBoundAtMax(n)));
-  }
-}
+  };
+};
 
 // "Hold on, I can write that more succinctly with bind."
 boundUpperCurried = max => Math.min.bind(null, max);

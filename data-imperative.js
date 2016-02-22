@@ -1,10 +1,10 @@
 export const boundUpper = (max, n) => {
   return n > max ? max : n;
-}
+};
 
 export const boundLower = (min, n) => {
   return n < min ? min : n;
-}
+};
 
 export const boundBetween = (min, max, n) => {
   if(n > max) {
@@ -14,7 +14,7 @@ export const boundBetween = (min, max, n) => {
   } else {
     return n;
   }
-}
+};
 
 export const boundBetween0And10 = (n) => {
   if(n > 10) {
@@ -24,7 +24,7 @@ export const boundBetween0And10 = (n) => {
   } else {
     return n;
   }
-}
+};
 
 export const boundBetweenNegative5And0 = (n) => {
   if(n > 0) {
@@ -34,6 +34,6 @@ export const boundBetweenNegative5And0 = (n) => {
   } else {
     return n;
   }
-}
+};
 
 
