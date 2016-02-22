@@ -1,5 +1,5 @@
 let boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0;
-export { boundUpper, boundLower, boundBetween, boundBetween0And10, boundBetweenNegative5And0 };
+export { boundUpper, boundLower, boundBetween, boundBetweenCurried, boundBetween0And10, boundBetweenNegative5And0 };
 
 
 // "How can I make data-imperative.js more functional?"

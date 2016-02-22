@@ -10,9 +10,26 @@ const drawBarCluster = chart(ctx);
 const data1 = [10, 4, -5, 0, 8, 14];
 const data2 = [8, -3, 1, 2, 22, 7];
 
-// Your code here:
+const each = R.addIndex(R.forEach);
+const drawChart = each(R.flip(drawBarCluster));
+const clip = R.map(boundBetweenCurried(0, 10));
+
+const combinedData = R.zip(
+  clip(data1),
+  clip(data2)
+);
+drawChart(combinedData);
 
 
 
 // Bonus: make it work with a third data set:
 const data3 = [1, 4, 22, -8, 3, 7];
+
+const combineDataSets = R.compose(
+  R.transpose,
+  R.map(clip)
+);
+
+const combinedData3 = combineDataSets([data1, data2, data3]);
+drawChart(combinedData3);
+

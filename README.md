@@ -18,13 +18,19 @@ Why Ramda?  What's wrong with underscore/lodash?  Ramda makes 2 important FP con
 **Challenge:** graph a clustered bar chart clipped along the y-axis between 0 and 10 for the following collection of raw data:
 
 ```javascript
-var data1 = [10, 4, -5, 0, 8, 14];
-var data2 = [8, -3, 1, 2, 22, 7];
+const data1 = [10, 4, -5, 0, 8, 14];
+const data2 = [8, -3, 1, 2, 22, 7];
+```
+
+Given a charting library with the following public api:
+
+```javascript
+drawBarCluster(xIndex, arrayOfClusteredHeights);
 ```
 
 **Expected output:**
 
-[todo]
+![Expected chart output](clipped_cluster_bar_chart.png?raw=true)
 
 
 ### The process
@@ -34,3 +40,5 @@ Read through `data-functional.js` from top to bottom to see the process of manua
 By seeing each manual leap forward, you can gain insight into thinking in a more functional style, and appreciate how ramda makes writing functional javascript more practical.
 
 Once you have gone through that, try applying the same principles and the tools ramda's api provides to the rest of the challenge.
+
+You can add your code to `main.js`.  Run it with `npm install` and `npm start`, then open a browser to `localhost:8080`.  See `sample.js` for my implementation.
