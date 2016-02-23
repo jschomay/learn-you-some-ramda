@@ -4,7 +4,7 @@
   "description": "Ramda.js is a small and practical library that makes it easy to use functional style programing in javascript.",
   "main": "data.js",
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors --hot",
     "test": "./node_modules/mocha/bin/mocha ./**/*_spec.js --compilers js:babel-core/register -w"
   },
   "author": "",
